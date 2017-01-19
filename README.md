@@ -20,10 +20,11 @@ The following results were obtained by executing:the following on the same i5 la
   ./log_test_client -t 10000 
   ./log_to_file -j log.json
 
-Key results:
-  data rate:    2 Gbits / sec
+Key results:    
+  data rate:    2 Gbits / sec    
   message rate: 143K trace messages / sec
 
+```
 Counts
     microseconds = 42083
       log msgs sent = 828
@@ -61,6 +62,7 @@ Ratios
        log msgs to     total msgs = 0.069539
      trace msgs to     total msgs = 0.508356
        pkt msgs to     total msgs = 0.422105
+```
 
 Note:
 - Code has not been optimized for performance yet... 
