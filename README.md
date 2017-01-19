@@ -16,8 +16,58 @@ Extreme throughput, distributed and scalable log and trace library and capture s
 
 # Performance
 
-# Example
+The following results were obtained by executing:the following on the same i5 laptop running Ubuntu.
+  ./log_test_client -t 10000 
+  ./log_to_file -j log.json
 
+Key results:
+  data rate:    2 Gbits / sec
+  message rate: 143K trace messages / sec
+
+Counts
+    microseconds = 42083
+      log msgs sent = 828
+    trace msgs sent = 6053
+      pkt msgs sent = 5026
+    total msgs sent = 11907
+     msgs sent               = 11907
+    header+payload msgs bytes sent         = 10932096
+           payload msgs payload bytes sent = 10360560
+      log tests = 997
+    trace tests = 4035
+      pkt tests = 5026
+    timeslices = 10000
+
+Message Frequency
+      log msgs per second = 19675.403370
+    trace msgs per second = 143834.802652
+      pkt msgs per second = 119430.648956
+    total msgs per second = 282940.854977
+    total usec per msg    = 3.534308
+
+Test Frequency
+      log tests per timeslice = 0.099700
+    trace tests per timeslice = 0.403500
+      pkt tests per timeslice = 0.502600
+    total tests per timeslice = 1.005800
+
+Data Frequency
+    header+payload mbits per second = 2078
+           payload mbits per second = 1969
+
+Ratios
+        payload to header+payload = 0.947719
+         header to header+payload = 0.052281
+       log msgs to     total msgs = 0.069539
+     trace msgs to     total msgs = 0.508356
+       pkt msgs to     total msgs = 0.422105
+
+Note:
+- Code has not been optimized for performance yet... 
+- Better performance is expected if log_to_file is executed on an independent machine.
+
+
+# Example
 ```
 
 #include <logging.h>
